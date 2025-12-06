@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ふらっとぷろだくしょん | IRIAMライバーマネジメント</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    :root {
+      --blue-dark: #0062cc;
+      --blue-main: #0089ff;
+      --blue-light: #e9f4ff;
+      --bg-soft: #f7fafc;
+      --text-main: #253046;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN",
+                   "メイリオ", Meiryo, sans-serif;
+      color: var(--text-main);
+      background: var(--bg-soft);
+      line-height: 1.8;
+    }
+
+    a {
+      color: var(--blue-main);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--blue-main), var(--blue-dark));
+      color: #fff;
+      padding: 32px 16px 80px;
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .logo-circle {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: #0050c7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-circle span {
+      font-size: 52px;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .site-title {
+      margin: 0 0 4px;
+      font-size: 26px;
+      letter-spacing: 0.08em;
+    }
+
+    .site-subtitle {
+      margin: 0;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    /* 抽象的な波 */
+    .wave {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 80px;
+      background:
+        radial-gradient(circle at 10% 120%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.15) 56%) 0 0 / 50% 100% repeat-x,
+        linear-gradient(to top, #f7fafc, rgba(247,250,252,0));
+      opacity: 0.8;
+    }
+
+    /* ---------- LAYOUT ---------- */
+    main {
+      max-width: 960px;
+      margin: -40px auto 40px;
+      padding: 0 16px 40px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 20px 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 18px;
+      margin-bottom: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tagline {
+      font-size: 15px;
+      color: #4a607b;
+      margin-top: 2px;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      padding: 2px 10px;
+      border-radius: 999px;
+      background: var(--blue-light);
+      color: var(--blue-dark);
+    }
+
+    ul {
+      padding-left: 1.2em;
+      margin: 6px 0 0;
+    }
+    li + li {
+      margin-top: 3px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #8a9bb5;
+      margin-bottom: 4px;
+    }
+
+    .columns {
+      display: grid;
+      gap: 14px;
+    }
+
+    @media (min-width: 768px) {
+      header {
+        padding: 40px 16px 110px;
+      }
+      .header-inner {
+        gap: 32px;
+      }
+      .logo-circle {
+        width: 104px;
+        height: 104px;
+      }
+      .logo-circle span {
+        font-size: 60px;
+      }
+
+      main {
+        margin-top: -60px;
+      }
+
+      .columns {
+        grid-template-columns: 1.1fr 1fr;
+      }
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, #e6f2ff, #f4f9ff);
+      border-radius: 16px;
+      padding: 14px 14px 14px;
+      border: 1px solid rgba(0, 102, 204, 0.15);
+      font-size: 14px;
+    }
+
+    .cta-main {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 11px;
+      color: #8a9bb5;
+      padding: 10px 0 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header>
+    <div class="header-inner">
+      <div class="logo-circle">
+        <span>ふ</span>
+      </div>
+      <div>
+        <h1 class="site-title">ふらっとぷろだくしょん</h1>
+        <p class="site-subtitle">
+          あなたの歩幅に合わせた、やさしいIRIAMライバーマネジメント。
+        </p>
+      </div>
+    </div>
+    <div class="wave"></div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main>
+
+    <!-- 概要 -->
+    <section class="card">
+      <div class="section-label">ABOUT</div>
+      <h2>ふらっとぷろだくしょんとは</h2>
+      <p class="tagline">
+        ふらっとぷろだくしょんは、
+        <strong>「ライバーが自分の歩幅で、無理なく活動を続けられる環境づくり」</strong>
+        を大切にする、小さなマネジメントチームです。
+      </p>
+      <p>
+        初配信の準備から日々の活動サポートまで、<br>
+        IRIAMでの配信を<strong>安心して、ふらっと続けられる場所</strong>を目指しています。
+      </p>
+    </section>
+
+    <!-- サポート内容 + 募集 -->
+    <section class="columns">
+
+      <!-- サポート内容 -->
+      <div class="card">
+        <div class="section-label">SUPPORT</div>
+        <h2>サポート内容</h2>
+
+        <span class="badge">ていねいマネジメント</span>
+
+        <h3>初配信・準備</h3>
+        <ul>
+          <li>IRIAMアプリや機材の初期設定サポート</li>
+          <li>プロフィール・自己紹介文の作成サポート</li>
+          <li>初配信タイトルや内容の相談</li>
+        </ul>
+
+        <h3>活動サポート</h3>
+        <ul>
+          <li>配信スケジュールやペースの相談</li>
+          <li>配信内容・トークの振り返りとアドバイス</li>
+          <li>ちょっとした悩みごとの相談窓口</li>
+        </ul>
+
+        <h3>クリエイティブ</h3>
+        <ul>
+          <li>簡易サムネイル・配信画像の作成支援</li>
+          <li>ロゴや世界観づくりの相談</li>
+        </ul>
+
+        <h3>メンタル・安全面</h3>
+        <ul>
+          <li>無理をさせない運営方針</li>
+          <li>視聴者トラブルなどの相談・対応助言</li>
+        </ul>
+      </div>
+
+      <!-- 募集要項 / 連絡先 -->
+      <div class="card">
+        <div class="section-label">RECRUIT</div>
+        <h2>募集について</h2>
+        <p>
+          現在、<strong>IRIAMで活動したい方・準備中の方</strong>を対象に、少人数のサポートを行っています。
+        </p>
+        <ul>
+          <li>IRIAM初心者さん・未経験の方も歓迎</li>
+          <li>ノルマ・ペナルティなし</li>
+          <li>ペースや目標は一緒に相談して決めていきます</li>
+        </ul>
+
+        <div class="cta-box">
+          <div class="cta-main">ご興味のある方へ</div>
+          <div>
+            X（旧Twitter）のDMにて「相談希望」とお送りください。<br>
+            活動状況やご希望をお聞きしたうえで、合うかどうか一緒に考えます。
+          </div>
+        </div>
+
+        <p style="margin-top:10px;font-size:13px;">
+          ▶ Xアカウント：
+          <!-- ★ここを書き換えてね -->
+          <a href="https://x.com/flatprd" target="_blank" rel="noopener">
+            @flatprd
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ポリシー要約 -->
+    <section class="card">
+      <div class="section-label">POLICY</div>
+      <h2>ふらっとぷろだくしょんのポリシー</h2>
+      <ul>
+        <li><strong>あなたの歩幅に合わせたマネジメント</strong>を行います。</li>
+        <li>心と体の健康を最優先に、無理な配信はおすすめしません。</li>
+        <li>誹謗中傷・攻撃的な言動、規約違反行為には関わりません。</li>
+        <li>料金・ノルマ・ペナルティなどは設けていません。</li>
+        <li>卒業や活動ペースの変更は、いつでもご相談いただけます。</li>
+      </ul>
+      <p style="font-size:13px;margin-top:8px;">
+        ※ 詳しい運営方針は、面談時にあらためてご案内いたします。
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 ふらっとぷろだくしょん / Flat Production
+  </footer>
+
+</body>
+</html>
